@@ -26,12 +26,14 @@ source-repository head
 library
   exposed-modules:
       Mal
+      Reader
   other-modules:
       Paths_mal
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , regex-pcre
   default-language: Haskell2010
 
 executable mal-exe
@@ -44,6 +46,7 @@ executable mal-exe
   build-depends:
       base >=4.7 && <5
     , mal
+    , regex-pcre
   default-language: Haskell2010
 
 test-suite mal-test
@@ -57,4 +60,5 @@ test-suite mal-test
   build-depends:
       base >=4.7 && <5
     , mal
+    , regex-pcre
   default-language: Haskell2010
