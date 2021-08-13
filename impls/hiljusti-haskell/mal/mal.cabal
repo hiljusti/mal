@@ -25,7 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Mal
   other-modules:
       Paths_mal
   hs-source-dirs:
