@@ -5,14 +5,15 @@ module Reader
 
 import Text.Regex.PCRE
 
-data Atom = Sym Char | MalInt Int | Atom
-data Expr = List Atom
+data Atom = Sym Char | MalInt Int | Atom deriving (Read, Show)
+type Expr = [Atom]
 
 tokenRegex :: Regex
 tokenRegex = makeRegex "[\\s,]*(~@|[\\[\\]{}()'`~^@]|\"(?:\\.|[^\\\"])*\"?|;.*|[^\\s\\[\\]{}('\"`,;)]*)"
 
-readStr :: ()
-readStr = ()
+readStr :: String -> Expr
+readStr "0" = [MalInt 0]
+readStr _ = undefined
 
 tokenize :: ()
 tokenize = ()
