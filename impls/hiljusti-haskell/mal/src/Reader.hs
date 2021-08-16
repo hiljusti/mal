@@ -5,6 +5,9 @@ module Reader
 
 import Text.Regex.PCRE
 
+data Atom = Sym Char | MalInt Int | Atom
+data Expr = List Atom
+
 tokenRegex :: Regex
 tokenRegex = makeRegex "[\\s,]*(~@|[\\[\\]{}()'`~^@]|\"(?:\\.|[^\\\"])*\"?|;.*|[^\\s\\[\\]{}('\"`,;)]*)"
 
